@@ -33,61 +33,66 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Image.asset(
-          "images/original.jpg",
-          fit: BoxFit.cover,
-          height: 1000.0,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+    return SafeArea(
+      top: true,
+      bottom: false,
+      child: Stack(
           children: <Widget>[
-            Text(
-              "Pessoas: $_people",
-              style:
-              TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            Image.asset(
+              "images/original.jpg",
+              fit: BoxFit.cover,
+              height: 1000.0,
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: FlatButton(
-                    child: Text(
-                      "+1",
-                      style: TextStyle(fontSize: 40.0, color: Colors.white),
-                    ),
-                    onPressed: () {
-                      _changePeople(1);
-                    },
-                  ),
+                Text(
+                  "Pessoas: $_people",
+                  style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: FlatButton(
-                    child: Text(
-                      "-1",
-                      style: TextStyle(fontSize: 40.0, color: Colors.white),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: FlatButton(
+                        child: Text(
+                          "+1",
+                          style: TextStyle(fontSize: 40.0, color: Colors.white),
+                        ),
+                        onPressed: () {
+                          _changePeople(1);
+                        },
+                      ),
                     ),
-                    onPressed: () {
-                      _changePeople(-1);
-                    },
-                  ),
+                    Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: FlatButton(
+                        child: Text(
+                          "-1",
+                          style: TextStyle(fontSize: 40.0, color: Colors.white),
+                        ),
+                        onPressed: () {
+                          _changePeople(-1);
+                        },
+                      ),
+                    ),
+                  ],
                 ),
+                Text(
+                  _infoText,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 30),
+                )
               ],
             ),
-            Text(
-              _infoText,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 30),
-            )
           ],
-        ),
-      ],
+        )
     );
+
   }
 }
 
