@@ -123,7 +123,7 @@ class _HomeState extends State<Home> {
                       Icon(Icons.monetization_on, size: 150.0, color: Colors.amber,),
                       buildTextField("Reais", "R\$", realController, _realChanged),
                       Divider(),
-                      buildTextField("Dólares", "US\$", dolarController, _dolarChanged),
+                      buildTextField("Dólsares", "US\$", dolarController, _dolarChanged),
                       Divider(),
                       buildTextField("Euros", "£", euroController, _euroChanged),
                     ],
