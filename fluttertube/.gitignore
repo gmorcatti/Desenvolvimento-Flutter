@@ -49,3 +49,5 @@ test
 
 .metadata
 pubspec.lock
+
+lib/utils/api_key.dart
