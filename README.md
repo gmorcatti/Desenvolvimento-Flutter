@@ -9,6 +9,7 @@
  - [x] Buscador de GIF's
  - [x] Chat Online
  - [x] Favoritos do Youtube
+ - [ ] App de Animações
  
  ***
  
@@ -22,3 +23,4 @@
  * Comunicação com Banco de Dados;
  * Utilização do Firebase como armazenamento;
  * Como utilizar o BLoC Pattern;
+ * Ensino de Animações em Flutter;
