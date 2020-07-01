@@ -1,7 +1,9 @@
+import 'package:animations/screens/home/home_screen.dart';
 import 'package:animations/screens/login/widgets/form_container.dart';
 import 'package:animations/screens/login/widgets/signup_button.dart';
 import 'package:animations/screens/login/widgets/stagger_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart' show timeDilation;
 
 
 class LoginScreen extends StatefulWidget {
@@ -19,8 +21,16 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 1000),
     );
+
+    _animationController.addStatusListener((status) {
+      if(status == AnimationStatus.completed){
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => HomeScreen())
+        );
+      }
+    });
   }
 
   @override
@@ -31,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
+    timeDilation = 1;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
